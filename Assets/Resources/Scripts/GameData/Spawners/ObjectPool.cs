@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 public class ObjectPool<T> : MonoBehaviour
-    where T : MonoBehaviour, ISpawnable
+    where T : MonoBehaviour
 {
     [Header("Object Pool"), Space]
     [SerializeField] private Transform _poolContainer;
@@ -13,30 +13,28 @@ public class ObjectPool<T> : MonoBehaviour
 
     public List<T> PooledObjects => _pool;
 
-    protected void Initialize(List<T> prefab)
+    protected void Initialize(T prefab)
     {
-        for (int index = 0; index < _spawnAmount; index++)
+        for (int index = 0; index < _pool.Count; index++)
         {
-            T spawned = Instantiate(prefab[Random.Range(0, prefab.Count)], _poolContainer);
+            T spawned = Instantiate(prefab, _poolContainer);
 
             spawned.gameObject.SetActive(false);
             _pool.Add(spawned);
         }
     }
 
-    protected bool TryGetObjectInPool(out T result)
+    protected bool TryGetObject(out T result)
     {
-        result = _pool.FirstOrDefault(poolObject => poolObject.gameObject.activeSelf == false);
+        T gameObject = _pool.FirstOrDefault(poolObject => poolObject.gameObject.activeSelf == false);
 
-        return result != null;
+        result = gameObject;
+        return result;
     }
 
     protected void ResetPool()
     {
-        foreach (var item in _pool.ToList())
-        {
+        foreach (var item in _pool)
             _pool.Remove(item);
-            Destroy(item.gameObject);
-        }            
     }
 }
