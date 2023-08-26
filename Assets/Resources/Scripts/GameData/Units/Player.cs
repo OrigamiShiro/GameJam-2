@@ -8,12 +8,49 @@ namespace GameJam
     public class Player : MonoBehaviour
     {
         [SerializeField] private UnitData _data;
+        [SerializeField] private Transform itemPos;
         public UnitData Data => _data;
+        private BaseWeapon _weapon;
 
-        private void Awake()
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (DataContainer.PlayerData != null)
-                _data = DataContainer.PlayerData;
+            var isPrincess = other.gameObject.TryGetComponent<Princess>(out var princess);
+            var isWeapon = other.gameObject.TryGetComponent<BaseWeapon>(out var weapon);
+
+            if (isPrincess && _weapon != null)
+                TransferWeapon(princess, _weapon);
+            else if (isWeapon)
+                ApplyWeapon(weapon);
+        }
+
+        private void ApplyWeapon(BaseWeapon weapon)
+        {
+            _weapon = weapon;
+            weapon.transform.SetParent(itemPos);
+            weapon.SetCenter();
+        }
+
+        private void TransferWeapon(Princess target, BaseWeapon weapon)
+        {
+            target.ApplyWeapon(weapon);
+            Destroy(weapon.gameObject);
+            _weapon = null;
+        }
+        
+        private void FixedUpdate()
+        {
+            MovementLogic();
+        }
+
+        private void MovementLogic()
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+
+            float moveVertical = Input.GetAxis("Vertical");
+
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+            transform.Translate(movement * _data.moveSpeed * Time.fixedDeltaTime);
         }
     }
 }
