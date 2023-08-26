@@ -7,9 +7,8 @@ namespace GameJam
         [SerializeField] private UnitData _data;
         [SerializeField] private Transform itemPos;
 
-        private Weapon _weapon;
-
         public UnitData Data => _data;
+        private Weapon _weapon;
 
         private void OnTriggerEnter2D(Collider2D other)
         {

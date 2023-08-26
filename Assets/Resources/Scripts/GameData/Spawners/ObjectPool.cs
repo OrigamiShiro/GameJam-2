@@ -10,7 +10,6 @@ public class ObjectPool<T> : MonoBehaviour
     [SerializeField] private int _spawnAmount;
 
     private List<T> _pool = new List<T>();
-
     public List<T> PooledObjects => _pool;
 
     protected void Initialize(List<T> prefab)
