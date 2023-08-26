@@ -13,7 +13,6 @@ namespace GameJam
 
         public void SetPosition()
         {
-            transform.position = transform.parent.position;
         }
     }
 }
