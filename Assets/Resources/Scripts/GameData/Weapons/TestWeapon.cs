@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameJam
 {
-    public class TestWeapon : BaseWeapon
+    public class TestWeapon : Weapon
     {
     }
 }

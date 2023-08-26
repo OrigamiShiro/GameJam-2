@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameJam
 {
-    public abstract class BaseWeapon : MonoBehaviour
+    public abstract class Weapon : MonoBehaviour, ISpawnable
     {
         public void SetCenter()
         {
             transform.position = transform.parent.position;
         }
     }
-
 }

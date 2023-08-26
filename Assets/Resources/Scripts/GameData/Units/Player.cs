@@ -10,12 +10,12 @@ namespace GameJam
         [SerializeField] private UnitData _data;
         [SerializeField] private Transform itemPos;
         public UnitData Data => _data;
-        private BaseWeapon _weapon;
+        private Weapon _weapon;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             var isPrincess = other.gameObject.TryGetComponent<Princess>(out var princess);
-            var isWeapon = other.gameObject.TryGetComponent<BaseWeapon>(out var weapon);
+            var isWeapon = other.gameObject.TryGetComponent<Weapon>(out var weapon);
 
             if (isPrincess && _weapon != null)
                 TransferWeapon(princess, _weapon);
@@ -23,14 +23,14 @@ namespace GameJam
                 ApplyWeapon(weapon);
         }
 
-        private void ApplyWeapon(BaseWeapon weapon)
+        private void ApplyWeapon(Weapon weapon)
         {
             _weapon = weapon;
             weapon.transform.SetParent(itemPos);
             weapon.SetCenter();
         }
 
-        private void TransferWeapon(Princess target, BaseWeapon weapon)
+        private void TransferWeapon(Princess target, Weapon weapon)
         {
             target.ApplyWeapon(weapon);
             Destroy(weapon.gameObject);
