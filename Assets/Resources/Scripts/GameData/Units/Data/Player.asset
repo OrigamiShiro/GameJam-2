@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   health: 200
-  moveSpeed: 700
+  moveSpeed: 20
