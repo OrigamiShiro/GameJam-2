@@ -7,14 +7,14 @@ public class WeaponHandler : MonoBehaviour
     public UnityEvent OnDurabilityChanged = new();
     public UnityEvent OnBroken = new();
     [SerializeField] private Weapon weapon;
-    [SerializeField] private float speed;
+    [SerializeField] private float attackSpeed;
     [SerializeField] private float maxDurability;
     [SerializeField] private float durability;
     private void Awake()
     {
         if(weapon != null)
         {
-            speed = weapon.Speed;
+            attackSpeed = weapon.AttackSpeed;
             maxDurability = weapon.Durability;
             durability = maxDurability;
         }

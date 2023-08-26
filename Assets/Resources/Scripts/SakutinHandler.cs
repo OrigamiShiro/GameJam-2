@@ -12,7 +12,7 @@ public class SakutinHandler : MonoBehaviour
     public UnityEvent OnAttacked = new();
     [Header("Stats")]
     [SerializeField] private Sakutin sakutin;
-    [SerializeField] private float speed;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private float changeCooldown;
     [SerializeField] private int hp;
     [SerializeField] private int maxHp;
@@ -21,7 +21,6 @@ public class SakutinHandler : MonoBehaviour
     [SerializeField] private Image durabilityBar;
     [Header("Directions")]
     [SerializeField] private Vector3[] directions;
-    private Animator anim;
     private WeaponHandler weapon;
     private Vector3 direction;
 
@@ -31,9 +30,7 @@ public class SakutinHandler : MonoBehaviour
         {
             maxHp = sakutin.Hp;
             hp = maxHp;
-            speed = sakutin.Speed;
         }
-        anim = GetComponent<Animator>();
         StartCoroutine(ChangeDirection());
         OnHpChanged.AddListener(() => { hpBar.fillAmount = (float)hp / maxHp; });
         OnHpChanged.Invoke();
@@ -66,17 +63,10 @@ public class SakutinHandler : MonoBehaviour
     {
         if(direction.normalized != Vector3.zero)
         {
-            transform.Translate(direction.normalized * speed * Time.deltaTime);
+            transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
         }
     }
-    public void OffRight()
-    {
-        anim.SetBool("Right", false);
-    }
-    public void OffLeft()
-    {
-        anim.SetBool("Left", false);
-    }
+    
     public void SetWeapon(WeaponHandler weapon)
     {
         this.weapon = weapon;

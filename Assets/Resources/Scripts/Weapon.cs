@@ -3,8 +3,8 @@
 [CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObjects/Weapon")]
 public class Weapon : ScriptableObject
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float attackSpeed;
     [SerializeField] private int durability;
-    public float Speed => speed;
+    public float AttackSpeed => attackSpeed;
     public int Durability => durability;
 } 
