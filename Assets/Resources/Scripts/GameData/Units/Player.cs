@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace GameJam
@@ -10,15 +9,6 @@ namespace GameJam
 
         public UnitData Data => _data;
         private Weapon _weapon;
-
-        private void Awake()
-        {
-            
-            if (DataContainer.PlayerData != null)
-                _data = DataContainer.PlayerData;
-                    
-          
-        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
