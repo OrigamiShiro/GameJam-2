@@ -18,11 +18,11 @@ namespace GameJam
         {
             while (true)
             {
-                yield return new WaitForSeconds(directionChangeDelay);
                 direction = directions[Random.Range(0, directions.Length)];
+                yield return new WaitForSeconds(directionChangeDelay);
             }
         }
-        private void Update()
+        private void FixedUpdate()
         {
             MovementLogic();
         }

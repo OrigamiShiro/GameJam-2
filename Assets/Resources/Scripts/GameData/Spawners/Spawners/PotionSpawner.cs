@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class PotionSpawner : Spawner<Potion>
+namespace GameJam
 {
-    [SerializeField] private float _spawnInterval = 3f;
-
-    protected override float SetSpawnInterval()
+    public class PotionSpawner : Spawner<Potion>
     {
-        return Random.Range(0, _spawnInterval);
+        [SerializeField] private float _spawnInterval = 3f;
+
+        protected override float SetSpawnInterval()
+        {
+            return Random.Range(0, _spawnInterval);
+        }
     }
 }
