@@ -7,7 +7,7 @@ public class GameOverScreen : Screen
     [SerializeField, Tooltip("Higher positive value equals faster fade in/out animation.")] private float _time;
 
     [Header("Final Score")]
-    //[SerializeField] private ScoreCounter _scoreCounter;
+    [SerializeField] private ScoreCounter _scoreCounter;
     [SerializeField] private TMP_Text _bestScore;
 
     public event Action ShowCanvas;

@@ -7,8 +7,17 @@ namespace GameJam
         [SerializeField] private UnitData _data;
         [SerializeField] private Transform _itemPos;
 
-        public UnitData Data => _data;
         private Weapon _weapon;
+        private float _speed;
+        private float _health;
+
+        public UnitData Data => _data;
+
+        private void Awake()
+        {
+            _speed = _data.Speed;
+            _health = _data.Health;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -46,7 +55,7 @@ namespace GameJam
             float moveVertical = Input.GetAxis("Vertical");
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-            transform.Translate(movement * _data.moveSpeed * Time.fixedDeltaTime);
+            transform.Translate(movement * _speed * Time.fixedDeltaTime);
         }
     }
 }
