@@ -68,12 +68,12 @@ namespace GameJam
 
         public void TakeDamage(int damage)
         {
-            if (_health <= 0)
+            if (damage <= 0)
                 return;
 
             _health -= damage;
 
-            if (_health == 0)
+            if (_health <= 0)
                 Died?.Invoke();
         }
 

@@ -43,12 +43,12 @@ public abstract class Enemy : MonoBehaviour, ISpawnable, IDamageable
 
     public void TakeDamage(int damage)
     {
-        if (_health <= 0)
+        if (damage <= 0)
             return;
 
         _health -= damage;
 
-        if (_health == 0)
+        if (_health <= 0)
         {
             Died?.Invoke();
             Die();
