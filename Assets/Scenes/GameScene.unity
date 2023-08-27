@@ -17623,6 +17623,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475355472}
   m_CullTransparentMesh: 1
+--- !u!1001 &1480204104
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1484991410}
+    m_Modifications:
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369058, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: m_Name
+      value: PotionsSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369059, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: _spawnablePrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014617200089369059, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+      propertyPath: _spawnablePrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 6739285189046204259, guid: cb0f7898565194747a9bf433ca5d7818, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+--- !u!4 &1480204105 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2014617200089369057, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+  m_PrefabInstance: {fileID: 1480204104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1480204106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2014617200089369059, guid: 83420d545ba409445aacfc2c01ed80b6, type: 3}
+  m_PrefabInstance: {fileID: 1480204104}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a03f5bf2ae2c934fbc18a06cf8318d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1484991409
 GameObject:
   m_ObjectHideFlags: 0
@@ -17653,6 +17734,7 @@ Transform:
   m_Children:
   - {fileID: 613343442}
   - {fileID: 2023763734}
+  - {fileID: 1480204105}
   m_Father: {fileID: 1524779554}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -76991,6 +77073,7 @@ MonoBehaviour:
   _enemyTarget: {fileID: 1538262745}
   _enemySpawner: {fileID: 613343443}
   _weaponSpawner: {fileID: 2023763736}
+  _potionSpawner: {fileID: 1480204106}
   _gameOverScreen: {fileID: 542204423}
 --- !u!1001 &228524067040891364
 PrefabInstance:
