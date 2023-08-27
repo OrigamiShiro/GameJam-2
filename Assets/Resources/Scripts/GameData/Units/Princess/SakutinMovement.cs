@@ -22,7 +22,8 @@ namespace GameJam
                 direction = directions[Random.Range(0, directions.Length)];
             }
         }
-        private void Update()
+
+        private void FixedUpdate()
         {
             MovementLogic();
         }
