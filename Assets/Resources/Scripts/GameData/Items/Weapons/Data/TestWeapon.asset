@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed56b830f9c227a4ca9ccad527fdd56a, type: 3}
   m_Name: TestWeapon
   m_EditorClassIdentifier: 
+  <Damage>k__BackingField: 4

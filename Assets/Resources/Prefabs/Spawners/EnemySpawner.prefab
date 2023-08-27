@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5996320932014018973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1000}
+  m_LocalPosition: {x: -9.4, y: 0, z: 8.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5996320932699792824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1000, y: 0, z: 0}
+  m_LocalPosition: {x: 0.18, y: 0, z: -6.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5996320933342690288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: 0}
+  m_LocalPosition: {x: 13.77, y: 0, z: 11.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5996320933439626381}
-  - component: {fileID: 5996320933439626380}
+  - component: {fileID: -5709687127195961021}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -192,7 +192,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5996320933439626380
+--- !u!114 &-5709687127195961021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,11 +201,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5996320933439626382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161884fc4f4d4e84cbf3fda29183414a, type: 3}
+  m_Script: {fileID: 11500000, guid: 04997b296a0e0dd4b826af24c41cb489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _poolContainer: {fileID: 5996320933270094180}
   _spawnAmount: 40
   spawnPointsContainer: {fileID: 5996320932034069924}
-  _spawnablePrefab: []
-  _spawnInterval: 2
+  _spawnablePrefab:
+  - {fileID: 4088597879414838225, guid: 7d37061be6dfccf43b8b22cb589a7c84, type: 3}
+  _spawnInterval: 1
