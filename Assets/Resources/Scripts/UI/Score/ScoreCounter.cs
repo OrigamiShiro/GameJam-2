@@ -13,7 +13,6 @@ public class ScoreCounter : MonoBehaviour
     {
         foreach (EnemySpawner spawner in _spawners)
         {
-            Debug.Log(spawner.PooledObjects.Count);
             foreach (Enemy enemy in spawner.PooledObjects)
             {
                 enemy.Died += OnEnemyDeath;

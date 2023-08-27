@@ -4,7 +4,7 @@ using UnityEngine;
 public class CameraOffset : MonoBehaviour
 {
     [SerializeField] private Offset _currentOffset;
-    [SerializeField] private Player _followTarget;
+    [SerializeField] private Princess _followTarget;
 
     private void FixedUpdate()
     {
