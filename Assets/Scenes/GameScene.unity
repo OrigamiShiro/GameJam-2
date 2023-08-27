@@ -2087,6 +2087,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1524779554}
     m_Modifications:
+    - target: {fileID: 228524067687864120, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abfaf023115e88c4b85099a45ed2e187, type: 3}
+    - target: {fileID: 228524067687864120, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 228524067687864120, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 228524067687864120, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 228524067687864121, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2157,7 +2173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 228524067687864121, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 228524067687864121, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2174,6 +2190,10 @@ PrefabInstance:
     - target: {fileID: 228524067687864124, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
       propertyPath: m_Name
       value: Sakutin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488479850167441283, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1ec05121d27ac4c89af12423bc9bdf, type: 3}
@@ -2254,7 +2274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1992567319055168307, guid: 264be0b7b36ded04da43812b9467db0e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 1992567319055168307, guid: 264be0b7b36ded04da43812b9467db0e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2272,8 +2292,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1992567319055168319, guid: 264be0b7b36ded04da43812b9467db0e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 264be0b7b36ded04da43812b9467db0e, type: 3}
 --- !u!1001 &7824434460632291652
 PrefabInstance:
