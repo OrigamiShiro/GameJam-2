@@ -7,6 +7,7 @@ public class SceneRoot : MonoBehaviour
     [SerializeField] private MovementInput _playerMovement;
     [SerializeField] private Princess _enemyTarget;
     [SerializeField] private EnemySpawner _enemySpawner;
+    [SerializeField] private WeaponSpawner _weaponSpawner;
 
     private Player _player;
     private State _enemyState;
@@ -31,6 +32,7 @@ public class SceneRoot : MonoBehaviour
     {
         _playerMovement.Activate();
         _enemySpawner.Init();
+        _weaponSpawner.Init();
 
         foreach (Enemy enemy in _enemySpawner.PooledObjects)
         {
@@ -49,8 +51,9 @@ public class SceneRoot : MonoBehaviour
             _enemyState.Deactivate();
         }
 
-            _playerMovement.Deactivate();
+        _playerMovement.Deactivate();
         _enemySpawner.StopSpawn();
+        _weaponSpawner.StopSpawn();
         _gameOverScreen.Open();
     }
 }
