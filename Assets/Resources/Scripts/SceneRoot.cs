@@ -16,11 +16,13 @@ public class SceneRoot : MonoBehaviour
     {
         _player = _playerMovement.GetComponent<Player>();
         _player.Died += OnPlayerDeath;
+        _enemyTarget.Died += OnPlayerDeath;
     }
 
     private void OnDisable()
     {
         _player.Died -= OnPlayerDeath;
+        _enemyTarget.Died -= OnPlayerDeath;
     }
 
     private void Start()
@@ -34,7 +36,6 @@ public class SceneRoot : MonoBehaviour
 
     private void OnPlayerDeath()
     {
-        _player.Die();
         _playerMovement.Deactivate();
         _enemySpawner.StopSpawn();
         _gameOverScreen.Open();

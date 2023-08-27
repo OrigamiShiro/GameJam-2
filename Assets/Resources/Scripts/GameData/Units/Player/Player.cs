@@ -56,6 +56,11 @@ namespace GameJam
             _weapon = null;
         }
 
+        private void Die()
+        {
+            gameObject.SetActive(false);
+        }
+
         public void IncreaseHealth(int addition)
         {
             _maxHealth += addition;
@@ -74,12 +79,10 @@ namespace GameJam
             _health -= damage;
 
             if (_health <= 0)
+            {
                 Died?.Invoke();
-        }
-
-        public void Die()
-        {
-            gameObject.SetActive(false);
+                Die();
+            }
         }
     }
 }

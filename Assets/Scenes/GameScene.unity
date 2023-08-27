@@ -790,6 +790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: {fileID: 940666662}
+  _spawners:
+  - {fileID: 613343443}
 --- !u!224 &1085809814 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7824434461716004306, guid: 79b75f3c4a984cf46acb989ff48a5ed9, type: 3}
@@ -1012,17 +1014,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73bdd42593905484c8de95dc400457ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1258228047 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9052066908267883007, guid: 264be0b7b36ded04da43812b9467db0e, type: 3}
-  m_PrefabInstance: {fileID: 1992567317819226746}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248375edd38b748488f7580ba30b946c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1310386557
@@ -1786,7 +1777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentOffset:
     Value: {x: 0, y: 5, z: -10}
-  _followTarget: {fileID: 1258228047}
+  _followTarget: {fileID: 1538262745}
 --- !u!1 &1782849110
 GameObject:
   m_ObjectHideFlags: 0

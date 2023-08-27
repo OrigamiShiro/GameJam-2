@@ -24,6 +24,6 @@ public class AttackState : State
 
     private void Attack(Princess target)
     {
-
+        target.TakeDamage(_enemy.Damage);
     }
 }
