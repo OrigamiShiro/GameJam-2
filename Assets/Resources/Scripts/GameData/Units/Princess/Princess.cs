@@ -6,10 +6,12 @@ namespace GameJam
     public class Princess : MonoBehaviour, IDamageable
     {
         [SerializeField] private UnitData _data;
-
+        
         private Weapon _weapon;
         private float _health;
         private float _maxHealth;
+
+        public UnitData Data => _data;
 
         public event Action Died;
 
