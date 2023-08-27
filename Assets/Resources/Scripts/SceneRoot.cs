@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class SceneRoot : MonoBehaviour
 {
-    [Header("Scene configurations")]
-    [SerializeField] private Player _player;
-    [SerializeField] private WeaponSpawner _weaponsSpawner;
+    [Header("Spawners configurations")]
+    [SerializeField] private Princess _enemyTarget;
+    [SerializeField] private EnemySpawner _enemySpawner;
 
     private void Start()
     {
-        _weaponsSpawner.Init();
+        _enemySpawner.Init();
+
+        foreach (Enemy enemy in _enemySpawner.PooledObjects)
+            enemy.Init(_enemyTarget);
     }
 }
