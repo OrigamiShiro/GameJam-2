@@ -1,3 +1,4 @@
+using GameJam;
 using UnityEngine;
 
 public class PlayerMovementInput : MovementInput

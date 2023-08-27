@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Player _player;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Animator _animator;
+
+    private Player _player;
 
     private void Awake()
     {
@@ -17,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
         
         _spriteRenderer.flipX = horizontalInput < 0;
         
+        _animator.SetFloat(AnimatorPlayerController.Params.Speed, Mathf.Abs(horizontalInput));
         transform.Translate(direction * _player.Speed * time);
     }
+
+    private static class AnimatorPlayerController { public static class Params { public const string Speed = nameof(Speed); } }
 }
