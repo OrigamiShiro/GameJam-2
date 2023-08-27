@@ -6,7 +6,7 @@ namespace GameJam
     public class Player : MonoBehaviour, IDamageable
     {
         [SerializeField] private UnitData _data;
-        [SerializeField] private Transform _itemPos;
+        [SerializeField] private Transform _itemContainer;
         
         private float _speed;
         private int _health;
@@ -29,7 +29,7 @@ namespace GameJam
         public void ApplyWeapon(Weapon weapon)
         {
             Weapon = weapon;
-            weapon.transform.SetParent(_itemPos);
+            weapon.transform.SetParent(_itemContainer);
             weapon.GetPicked();
         }
 
