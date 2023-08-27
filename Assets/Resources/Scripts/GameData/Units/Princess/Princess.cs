@@ -8,8 +8,8 @@ namespace GameJam
         [SerializeField] private UnitData _data;
 
         private Weapon _weapon;
-        private int _health;
-        private int _maxHealth;
+        private float _health;
+        private float _maxHealth;
 
         public event Action Died;
 
@@ -27,6 +27,11 @@ namespace GameJam
         public void ApplyWeapon(Weapon weapon)
         {
             _weapon = weapon;
+        }
+
+        public void ApplyPotion(Potion potion)
+        {
+            _health += potion.PotionValue;
         }
 
         public void TakeDamage(int damage)

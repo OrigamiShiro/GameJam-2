@@ -13,6 +13,7 @@ namespace GameJam
         private int _maxHealth;
 
         public Weapon Weapon { get; private set; }
+        public Potion Potion { get; private set; }
         public UnitData Data => _data;
         public float Speed => _speed;
         public int CurrentHealth => _health;
@@ -33,6 +34,20 @@ namespace GameJam
             weapon.GetPicked();
         }
 
+        public void ApplyPotion(Potion potion)
+        {
+            Potion = potion;
+            potion.transform.SetParent(_itemContainer);
+            potion.GetPicked();
+        }
+
+        public void TransferPotion(Princess target, Potion potion)
+        {
+            target.ApplyPotion(potion);
+            Destroy(potion.gameObject);
+            Potion = null;
+        }
+        
         public void TransferWeapon(Princess target, Weapon weapon)
         {
             target.ApplyWeapon(weapon);
