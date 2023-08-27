@@ -7,13 +7,19 @@ namespace GameJam
         [SerializeField] private WeaponData _data;
 
         private int _damage;
+        private int _durability;
+        private float _attackSpeed;
 
         public int Damage => _damage;
+        public int Durability => _durability;
+        public float AttackSpeed => _attackSpeed;
         public WeaponData Data => _data;
 
         private void Start()
         {
             _damage = _data.Damage;
+            _durability = _data.Durability;
+            _attackSpeed = _data.AttackSpeed;
         }
 
         private void SetScale()

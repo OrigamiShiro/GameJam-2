@@ -7,5 +7,7 @@ namespace GameJam
     public class WeaponData : ScriptableObject
     {
         [field: SerializeField, Range(0, 40)] public int Damage { get; private set; }
+        [field: SerializeField, Range(0, 40)] public int Durability { get; private set; }
+        [field: SerializeField, Range(0, 40)] public float AttackSpeed { get; private set; }
     }
 }
