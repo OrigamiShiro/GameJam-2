@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/Scripts/WeaponHandler.cs.meta
 guid: 30b823ed9934adf4e9680eec314ae957
+========
+guid: c3679e62393b1b044b27caedc8d7fef0
+>>>>>>>> d494086a2a5560c20a35e63058143b88f86b2fc5:Assets/Resources/Scripts/Weapon.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
