@@ -5,12 +5,12 @@ namespace GameJam
     public class Player : MonoBehaviour
     {
         [SerializeField] private UnitData _data;
-        [SerializeField] private Transform itemPos;
+        [SerializeField] private Transform _itemPos;
 
         public UnitData Data => _data;
         private Weapon _weapon;
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter(Collider other)
         {
             var isPrincess = other.gameObject.TryGetComponent<Princess>(out var princess);
             var isWeapon = other.gameObject.TryGetComponent<Weapon>(out var weapon);
@@ -24,9 +24,8 @@ namespace GameJam
         private void ApplyWeapon(Weapon weapon)
         {
             _weapon = weapon;
-            weapon.transform.SetParent(itemPos);
-            weapon.SetScale();
-            weapon.SetPosition();
+            weapon.transform.SetParent(_itemPos);
+            weapon.GetPicked();
         }
 
         private void TransferWeapon(Princess target, Weapon weapon)
