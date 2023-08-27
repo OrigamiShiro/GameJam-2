@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Princess
   m_EditorClassIdentifier: 
   <Health>k__BackingField: 12
-  <Speed>k__BackingField: 2
+  <Speed>k__BackingField: 1

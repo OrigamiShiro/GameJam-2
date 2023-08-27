@@ -6,7 +6,11 @@ public class SceneRoot : MonoBehaviour
     [Header("Scene configurations"), Space]
     [SerializeField] private MovementInput _playerMovement;
     [SerializeField] private Princess _enemyTarget;
+
+    [Header("Spawners configurations"), Space]
     [SerializeField] private EnemySpawner _enemySpawner;
+    [SerializeField] private WeaponSpawner _weaponSpawner;
+    [SerializeField] private PotionSpawner _potionSpawner;
 
     private Player _player;
     private State _enemyState;
@@ -31,6 +35,8 @@ public class SceneRoot : MonoBehaviour
     {
         _playerMovement.Activate();
         _enemySpawner.Init();
+        _weaponSpawner.Init();
+        _potionSpawner.Init();
 
         foreach (Enemy enemy in _enemySpawner.PooledObjects)
         {
@@ -49,8 +55,10 @@ public class SceneRoot : MonoBehaviour
             _enemyState.Deactivate();
         }
 
-            _playerMovement.Deactivate();
+        _playerMovement.Deactivate();
         _enemySpawner.StopSpawn();
+        _weaponSpawner.StopSpawn();
+        _potionSpawner.StopSpawn();
         _gameOverScreen.Open();
     }
 }
