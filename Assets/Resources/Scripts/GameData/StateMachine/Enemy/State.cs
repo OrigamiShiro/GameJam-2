@@ -7,6 +7,7 @@ public abstract class State : MonoBehaviour
     [SerializeField] private List<Transition> _transitions;
 
     protected Princess Target { get; set; }
+    protected bool _isActive;
 
     public void Enter(Princess target)
     {
@@ -42,5 +43,15 @@ public abstract class State : MonoBehaviour
                 return transition.TargetState;
         }
         return null;
+    }
+
+    public void Activate()
+    {
+        _isActive = true;
+    }
+
+    public void Deactivate()
+    {
+        _isActive = false;
     }
 }

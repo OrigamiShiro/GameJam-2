@@ -1,4 +1,3 @@
-using GameJam;
 using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]

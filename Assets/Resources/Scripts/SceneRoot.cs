@@ -7,7 +7,9 @@ public class SceneRoot : MonoBehaviour
     [SerializeField] private MovementInput _playerMovement;
     [SerializeField] private Princess _enemyTarget;
     [SerializeField] private EnemySpawner _enemySpawner;
+
     private Player _player;
+    private State _enemyState;
 
     [Header("UI Screens"), Space]
     [SerializeField] private GameOverScreen _gameOverScreen;
@@ -31,12 +33,23 @@ public class SceneRoot : MonoBehaviour
         _enemySpawner.Init();
 
         foreach (Enemy enemy in _enemySpawner.PooledObjects)
+        {
+            _enemyState = enemy.GetComponent<State>();
+
+            _enemyState.Activate();
             enemy.Init(_enemyTarget);
+        }
     }
 
     private void OnPlayerDeath()
     {
-        _playerMovement.Deactivate();
+        foreach (Enemy enemy in _enemySpawner.PooledObjects)
+        {
+            _enemyState = enemy.GetComponent<State>();
+            _enemyState.Deactivate();
+        }
+
+            _playerMovement.Deactivate();
         _enemySpawner.StopSpawn();
         _gameOverScreen.Open();
     }

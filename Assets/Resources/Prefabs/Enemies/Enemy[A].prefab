@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 4088597879414838221}
-  _distanceFromTarget: 0
+  _distanceFromTarget: 0.5
 --- !u!114 &4088597879414838221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 4088597879414838227}
-  _distanceFromPlayer: 1.5
+  _distanceFromPlayer: 1
 --- !u!1 &4088597879813091803
 GameObject:
   m_ObjectHideFlags: 0
