@@ -7,12 +7,12 @@ namespace GameJam
     {
         [SerializeField] private UnitData _data;
         [SerializeField] private Transform _itemPos;
-
-        private Weapon _weapon;
+        
         private float _speed;
         private int _health;
         private int _maxHealth;
 
+        public Weapon Weapon { get; private set; }
         public UnitData Data => _data;
         public float Speed => _speed;
         public int CurrentHealth => _health;
@@ -26,34 +26,18 @@ namespace GameJam
             _health = _maxHealth;
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void ApplyWeapon(Weapon weapon)
         {
-            var isPrincess = other.gameObject.TryGetComponent<Princess>(out var princess);
-            var isWeapon = other.gameObject.TryGetComponent<Weapon>(out var weapon);
-            var isEnemy = other.gameObject.TryGetComponent<Enemy>(out var enemy);
-
-            if (isPrincess && _weapon != null)
-                TransferWeapon(princess, _weapon);
-            else if (isWeapon)
-                ApplyWeapon(weapon);
-            else if (isEnemy)
-            {
-                TakeDamage(enemy.Damage);
-            }
-        }
-
-        private void ApplyWeapon(Weapon weapon)
-        {
-            _weapon = weapon;
+            Weapon = weapon;
             weapon.transform.SetParent(_itemPos);
             weapon.GetPicked();
         }
 
-        private void TransferWeapon(Princess target, Weapon weapon)
+        public void TransferWeapon(Princess target, Weapon weapon)
         {
             target.ApplyWeapon(weapon);
             Destroy(weapon.gameObject);
-            _weapon = null;
+            Weapon = null;
         }
 
         private void Die()

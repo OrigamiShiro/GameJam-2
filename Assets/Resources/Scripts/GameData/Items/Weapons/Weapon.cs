@@ -24,7 +24,7 @@ namespace GameJam
 
         private void SetScale()
         {
-            var newScaleSize = 0.4f;
+            var newScaleSize = 0.6f;
 
             transform.localScale = new Vector3(newScaleSize, newScaleSize, newScaleSize);
         }
