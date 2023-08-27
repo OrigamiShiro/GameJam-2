@@ -6,10 +6,10 @@ public class WeaponHandler : MonoBehaviour
 {
     public UnityEvent OnDurabilityChanged = new();
     public UnityEvent OnBroken = new();
-    [SerializeField] private Weapon weapon;
+    [SerializeField] private WeaponScr weapon;
     [SerializeField] private float attackSpeed;
-    [SerializeField] private float maxDurability;
-    [SerializeField] private float durability;
+    [SerializeField] private int maxDurability;
+    [SerializeField] private int durability;
     private void Awake()
     {
         if(weapon != null)
@@ -33,7 +33,7 @@ public class WeaponHandler : MonoBehaviour
     {
         Durability -= damage;
     }
-    public float Durability
+    public int Durability
     {
         get => durability;
         set

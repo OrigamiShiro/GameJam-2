@@ -13,7 +13,7 @@ public class SakutinHandler : MonoBehaviour
     [Header("Stats")]
     [SerializeField] private Sakutin sakutin;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float changeCooldown;
+    [SerializeField] private float directionChangeDelay;
     [SerializeField] private int hp;
     [SerializeField] private int maxHp;
     [Header("UI Images")]
@@ -55,7 +55,7 @@ public class SakutinHandler : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(changeCooldown);
+            yield return new WaitForSeconds(directionChangeDelay);
             direction = directions[Random.Range(0, directions.Length)];
         }
     }
@@ -78,7 +78,7 @@ public class SakutinHandler : MonoBehaviour
         this.weapon.OnBroken.AddListener(() => { this.weapon = null; });
         this.weapon.StartAttack();
     }
-    public void Attack(int damage)
+    public void TakeDamage(int damage)
     {
         hp -= damage;
         if(hp <= 0)
